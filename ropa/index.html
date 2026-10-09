@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Lana & Monte · Plantilla de ejemplo de JJBeta">
+<title>Lana &amp; Monte · Ropa hecha en Antioquia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_boceto.css">
+<style>
+:root { --cream: #f4efe6; --sand: #e7dccb; --terra: #b5562f; --ink: #1c1915; --soft: #6e665b; --white: #fffdf9; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; }
+body { background: var(--cream); color: var(--ink); font: 400 16px/1.6 'Inter', sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { border: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+.wrap { width: min(1280px, 100% - 64px); margin: 0 auto; }
+.serif { font-family: 'DM Serif Display', serif; font-weight: 400; letter-spacing: -.01em; line-height: .95; }
+.serif em { font-style: italic; color: var(--terra); }
+.pill { display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border-radius: 99px; font-weight: 600; font-size: 14px; }
+.pill.solid { background: var(--ink); color: var(--cream); }
+.pill.line { border: 1.5px solid var(--ink); }
+.pill svg { width: 17px; height: 17px; }
+.eyebrow { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; font-weight: 600; color: var(--soft); }
+
+.top { background: var(--ink); color: var(--cream); text-align: center; font-size: 13px; padding: 9px; letter-spacing: .04em; }
+nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 22px 0; }
+nav ul { display: flex; gap: 26px; list-style: none; font-size: 14px; font-weight: 500; }
+.logo { font-family: 'DM Serif Display'; font-size: 30px; text-align: center; }
+.logo em { color: var(--terra); }
+nav .right { justify-self: end; display: flex; gap: 18px; align-items: center; font-size: 14px; font-weight: 500; }
+
+.hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; padding-top: 10px; height: 690px; }
+.hero .ph { border-radius: 6px; overflow: hidden; height: 100%; position: relative; }
+.hero .ph.main::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(28 25 21 / .72) 0%, rgb(28 25 21 / .15) 45%, transparent 70%); }
+.hero .ph img { width: 100%; height: 100%; object-fit: cover; }
+.hero .side { display: grid; grid-template-rows: 1fr auto; gap: 26px; min-height: 0; }
+.hero h1 { position: absolute; z-index: 1; left: 44px; right: 44px; bottom: 40px; font-size: 92px; color: var(--white); }
+.hero h1 em { color: #f3c3a6; }
+.hero .side .ph { min-height: 0; }
+.hero .note { background: var(--white); border-radius: 6px; padding: 28px; }
+.hero .note p { color: var(--soft); margin: 10px 0 20px; }
+
+.new { padding: 100px 0 80px; }
+.head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 34px; gap: 20px; }
+.head h2 { font-size: 72px; }
+.chips { display: flex; gap: 8px; }
+.chip { padding: 10px 16px; border-radius: 99px; border: 1.5px solid var(--sand); font-size: 14px; font-weight: 500; background: var(--white); }
+.chip.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.card .ph { height: 380px; border-radius: 6px; overflow: hidden; position: relative; background: var(--sand); }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.card:hover img { transform: scale(1.04); }
+.card .quick { position: absolute; left: 12px; right: 12px; bottom: 12px; background: var(--white); border-radius: 99px; padding: 11px; text-align: center; font-weight: 600; font-size: 13px; }
+.card h3 { font-weight: 500; font-size: 16px; margin-top: 14px; }
+.card .meta { display: flex; justify-content: space-between; color: var(--soft); font-size: 14px; margin-top: 2px; }
+.card .meta b { color: var(--ink); font-weight: 600; }
+.badge { position: absolute; top: 12px; left: 12px; background: var(--terra); color: #fff; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 99px; }
+
+.how { background: var(--ink); color: var(--cream); border-radius: 8px; padding: 70px 60px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
+.how h2 { font-size: 64px; }
+.how h2 em { color: #f3c3a6; }
+.steps { display: grid; gap: 14px; }
+.step { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; border-bottom: 1px solid rgb(244 239 230 / .15); padding-bottom: 16px; }
+.step b { font-family: 'DM Serif Display'; font-size: 40px; color: #f3c3a6; font-weight: 400; }
+.step p { color: rgb(244 239 230 / .75); font-size: 15px; } .step h3 { font-weight: 600; font-size: 18px; }
+
+.look { padding: 100px 0; display: grid; grid-template-columns: .7fr 1fr .7fr; gap: 20px; align-items: end; }
+.look .ph { border-radius: 6px; overflow: hidden; } .look img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.look .mid { text-align: center; }
+.look .mid h2 { font-size: 80px; margin-bottom: 26px; }
+.look .mid .ph { height: 420px; }
+
+footer { padding: 0 0 50px; color: var(--soft); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; border-top: 1px solid var(--sand); padding-top: 24px; }
+
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 32px); }
+  nav { grid-template-columns: auto 1fr; } nav ul { display: none; } .logo { text-align: left; }
+  .hero { grid-template-columns: 1fr; height: auto; }
+  .hero .ph.main { height: 520px; }
+  .hero h1 { left: 22px; right: 22px; bottom: 26px; font-size: 54px; }
+  .hero .side { grid-template-rows: auto; } .hero .side .ph { display: none; }
+  .head { flex-direction: column; align-items: start; } .head h2 { font-size: 46px; } .chips { flex-wrap: wrap; }
+  .products { grid-template-columns: 1fr 1fr; gap: 14px; } .card .ph { height: 240px; }
+  .card .quick { left: 8px; right: 8px; bottom: 8px; padding: 9px 6px; font-size: 11.5px; white-space: nowrap; }
+  .card .meta { flex-direction: column; gap: 0; }
+  .how { grid-template-columns: 1fr; padding: 40px 24px; } .how h2 { font-size: 42px; }
+  .look { grid-template-columns: 1fr 1fr; } .look .mid { grid-column: span 2; order: -1; } .look .mid h2 { font-size: 50px; } .look .mid .ph { height: 300px; }
+  footer .wrap { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+<p class="top">Envíos a todo el país · Cambios gratis en 15 días</p>
+<div class="wrap">
+  <nav aria-label="Principal"><ul><li><a href="#nuevo">Lo nuevo</a></li><li><a href="#pedir">Cómo pedir</a></li><li><a href="#look">Lookbook</a></li></ul><a class="logo" href="#">Lana <em>&amp;</em> Monte</a><div class="right"><a href="#">Buscar</a><a class="pill solid" style="padding:10px 16px" href="#">Bolsa (2)</a></div></nav>
+  <header class="hero">
+    <div class="ph main"><img src="fotos/u-1525562723836-dca67a71d5f1.webp" alt="Mujer eligiendo ropa en la tienda"><h1 class="serif">Ropa que dura <em>más que la temporada.</em></h1></div>
+    <div class="side">
+      <div class="ph"><img src="fotos/u-1603400521630-9f2de124b33b.webp" alt="Prendas en tonos neutros"></div>
+      <div class="note"><span class="eyebrow">Colección de octubre</span><p>Algodón y lino de talleres de Antioquia. Pocas unidades por diseño.</p><a class="pill solid" href="#nuevo">Ver la colección <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </header>
+
+  <section class="new" id="nuevo">
+    <div class="head"><h2 class="serif">Lo <em>nuevo.</em></h2><div class="chips" role="group" aria-label="Filtrar"><button class="chip on">Todo</button><button class="chip">Camisas</button><button class="chip">Vestidos</button><button class="chip">Pantalones</button></div></div>
+    <div class="products">
+      <article class="card"><div class="ph"><span class="badge">Nuevo</span><img src="fotos/u-1583316174775-bd6dc0e9f298.webp" alt="Vestidos estampados"><a class="quick" href="#">Pedir por WhatsApp</a></div><h3>Vestido Jardín</h3><p class="meta"><span>Lino · S a L</span><b>$189.000</b></p></article>
+      <article class="card"><div class="ph"><img src="fotos/u-1573879500655-98f2012dd1db.webp" alt="Blusas en tonos rosados"><a class="quick" href="#">Pedir por WhatsApp</a></div><h3>Blusa Arena</h3><p class="meta"><span>Algodón · S a XL</span><b>$98.000</b></p></article>
+      <article class="card"><div class="ph"><img src="fotos/u-1445205170230-053b83016050.webp" alt="Camisas colgadas"><a class="quick" href="#">Pedir por WhatsApp</a></div><h3>Camisa Monte</h3><p class="meta"><span>Lino · M a XL</span><b>$129.000</b></p></article>
+      <article class="card"><div class="ph"><span class="badge">Últimas 3</span><img src="fotos/u-1621261027519-a71ac66d5a68.webp" alt="Prendas claras en perchero"><a class="quick" href="#">Pedir por WhatsApp</a></div><h3>Set Neblina</h3><p class="meta"><span>Lino · S a M</span><b>$239.000</b></p></article>
+    </div>
+  </section>
+
+  <section class="how" id="pedir">
+    <div><span class="eyebrow" style="color:#c9bfae">Cómo pedir</span><h2 class="serif" style="margin-top:14px">Sin carrito, <em>sin enredos.</em></h2></div>
+    <div class="steps">
+      <div class="step"><b>1</b><div><h3>Eliges la prenda y tu talla</h3><p>Toca «Pedir por WhatsApp» y el mensaje se escribe solo.</p></div></div>
+      <div class="step"><b>2</b><div><h3>Te confirmamos en minutos</h3><p>Disponibilidad, envío y forma de pago.</p></div></div>
+      <div class="step"><b>3</b><div><h3>Llega a tu casa</h3><p>En 1 a 3 días hábiles. Si no te queda, la cambiamos.</p></div></div>
+    </div>
+  </section>
+
+  <section class="look" id="look">
+    <div class="ph" style="height:520px"><img src="fotos/u-1441984904996-e0b6ba687e04.webp" alt="Interior de la tienda"></div>
+    <div class="mid"><span class="eyebrow">Lookbook</span><h2 class="serif" style="margin-top:12px">Visítanos en <em>Rionegro.</em></h2><div class="ph"><img src="fotos/u-1573612664822-d7d347da7b80.webp" alt="Mesa con accesorios en la tienda"></div></div>
+    <div class="ph" style="height:520px"><img src="fotos/u-1445205170230-053b83016050.webp" alt="Perchero de prendas" style="object-position:70% 50%"></div>
+  </section>
+</div>
+<footer><div class="wrap"><span>Lana &amp; Monte · Ropa hecha en Antioquia</span><span>Plantilla de ejemplo · Diseño: JJBeta</span></div></footer>
+
+<a href="https://jjbeta-dev.github.io/plantillas/" style="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99;display:flex;gap:10px;align-items:center;background:oklch(20.74% 0.0865 291.29);color:#fff;font:600 14px/1 system-ui,sans-serif;padding:12px 18px;border-radius:99px;box-shadow:0 14px 34px rgb(0 0 0 / .3);text-decoration:none;white-space:nowrap"><span style="width:10px;height:10px;border-radius:50%;background:oklch(68.15% 0.1905 295.86)"></span>Plantilla de JJBeta · Quiero la mía</a>
+<script src="../_boceto.js"></script>
+</body>
+</html>

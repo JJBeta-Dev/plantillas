@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Filo · Plantilla de ejemplo de JJBeta">
+<title>Filo · Barbería en Rionegro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_boceto.css">
+<style>
+:root { --ink: #0f0e0c; --coal: #1a1916; --ivory: #f2ece1; --brass: #c9a35c; --brass-2: #e4c88f; --muted: #a49e93; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; }
+body { background: var(--ink); color: var(--ivory); font: 400 17px/1.6 'Inter', sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { border: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+.wrap { width: min(1240px, 100% - 64px); margin: 0 auto; }
+.display { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .01em; line-height: .92; font-weight: 400; }
+.gold { color: var(--brass); }
+.pill { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 4px; font-weight: 700; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.pill.solid { background: var(--brass); color: var(--ink); }
+.pill.line { border: 1.5px solid var(--ivory); }
+.pill svg { width: 18px; height: 18px; }
+.kicker { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--brass); font-weight: 700; }
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+.logo { font-family: 'Anton', sans-serif; font-size: 30px; letter-spacing: .06em; display: flex; align-items: center; gap: 12px; }
+.logo i { width: 34px; height: 3px; background: var(--brass); }
+nav ul { display: flex; gap: 34px; list-style: none; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+.nav-cta { padding: 12px 20px; font-size: 12px; }
+
+.hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 720px; margin-top: 8px; }
+.hero-txt { padding: 80px 60px 60px 0; display: flex; flex-direction: column; justify-content: center; }
+.hero h1 { font-size: 132px; margin: 22px 0 26px; }
+.hero h1 span { -webkit-text-stroke: 2px var(--ivory); color: transparent; }
+.hero p { color: var(--muted); max-width: 440px; font-size: 18px; }
+.actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.hero .ph { position: relative; }
+.hero .ph img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.2) contrast(1.05); display: block; border-radius: 4px; }
+.stamp { position: absolute; left: -46px; bottom: 60px; width: 150px; height: 150px; border-radius: 50%; background: var(--brass); color: var(--ink); display: grid; place-items: center; text-align: center; font-family: 'Anton'; font-size: 20px; line-height: 1.05; text-transform: uppercase; z-index: 2; }
+.stamp b { display: block; font-size: 44px; font-weight: 400; }
+
+.band { border-block: 1px solid #2c2a26; margin-top: 60px; padding: 22px 0; overflow: hidden; white-space: nowrap; font-family: 'Anton'; font-size: 28px; text-transform: uppercase; color: var(--muted); }
+.band span { margin-right: 46px; } .band span::after { content: '✕'; color: var(--brass); margin-left: 46px; font-size: 18px; vertical-align: middle; }
+
+.services { padding: 110px 0; display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+.services h2 { font-size: 86px; margin-top: 16px; }
+.services aside p { color: var(--muted); margin-top: 20px; max-width: 360px; }
+.row { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid #2c2a26; }
+.row h3 { font-family: 'Anton'; font-weight: 400; font-size: 30px; text-transform: uppercase; letter-spacing: .02em; }
+.row p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.row b { font-family: 'Anton'; font-weight: 400; font-size: 30px; color: var(--brass); }
+
+.gallery { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-template-rows: 300px 300px; gap: 14px; }
+.gallery .ph { overflow: hidden; border-radius: 4px; }
+.gallery .ph:first-child { grid-row: span 2; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.gallery .ph:hover img { transform: scale(1.05); }
+
+.book { margin: 110px 0; background: var(--ivory); color: var(--ink); border-radius: 6px; display: grid; grid-template-columns: 1.1fr .9fr; overflow: hidden; }
+.book .txt { padding: 60px; }
+.book h2 { font-size: 76px; }
+.book h2 span { color: var(--brass); }
+.slots { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 30px; }
+.chip { padding: 12px 18px; border: 1.5px solid var(--ink); border-radius: 4px; font-weight: 700; font-size: 14px; }
+.chip.on { background: var(--ink); color: var(--ivory); }
+.book .ph { min-height: 420px; position: relative; }
+.book .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.book .pill.solid { background: var(--ink); color: var(--ivory); }
+
+footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; border-top: 1px solid #2c2a26; padding-top: 26px; }
+
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 36px); }
+  nav ul { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-txt { padding: 40px 0 50px; }
+  .hero h1 { font-size: 76px; }
+  .hero .ph { height: 420px; }
+  .stamp { left: auto; right: 16px; bottom: -36px; width: 110px; height: 110px; font-size: 15px; }
+  .stamp b { font-size: 32px; }
+  .band { font-size: 20px; }
+  .services { grid-template-columns: 1fr; gap: 30px; padding: 80px 0; }
+  .services h2 { font-size: 60px; }
+  .row h3, .row b { font-size: 24px; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 160px 160px; }
+  .gallery .ph:first-child { grid-column: span 2; grid-row: auto; }
+  .book { grid-template-columns: 1fr; margin: 80px 0; }
+  .book .txt { padding: 36px 24px; }
+  .book h2 { font-size: 52px; }
+  .book .ph { min-height: 260px; }
+  footer .wrap { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Principal"><a class="logo" href="#"><i></i>FILO</a><ul><li><a href="#servicios">Servicios</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#reservar">Reservar</a></li></ul><a class="pill solid nav-cta" href="#reservar">Reservar turno</a></nav>
+  <header class="hero">
+    <div class="hero-txt">
+      <span class="kicker">Barbería · Rionegro, Antioquia</span>
+      <h1 class="display">Corte limpio, <span>sin esperas.</span></h1>
+      <p>Reservas tu turno en 20 segundos y llegas directo a la silla. Cortes clásicos, fades y barba con navaja caliente.</p>
+      <div class="actions"><a class="pill solid" href="#reservar">Reservar turno <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill line" href="#servicios">Ver precios</a></div>
+    </div>
+    <div class="ph"><img src="fotos/u-1593702275687-f8b402bf1fb5.webp" alt="Barbero haciendo un fade"><div class="stamp"><span><b>4,9</b>en Google</span></div></div>
+  </header>
+</div>
+<div class="band"><span>Fade</span><span>Barba con navaja</span><span>Corte clásico</span><span>Diseño</span><span>Fade</span><span>Barba con navaja</span><span>Corte clásico</span></div>
+
+<main class="wrap">
+  <section class="services" id="servicios">
+    <aside><span class="kicker">Servicios</span><h2 class="display">Precios <span class="gold">claros.</span></h2><p>Sin sorpresas al pagar. Todos los servicios incluyen lavado y peinado.</p></aside>
+    <div>
+      <div class="row"><div><h3>Corte clásico</h3><p>Tijera y máquina, a tu estilo.</p></div><b>$25.000</b></div>
+      <div class="row"><div><h3>Fade</h3><p>Degradado a cero, medio o alto.</p></div><b>$30.000</b></div>
+      <div class="row"><div><h3>Barba con navaja</h3><p>Toalla caliente y aceite.</p></div><b>$20.000</b></div>
+      <div class="row"><div><h3>Combo corte + barba</h3><p>El favorito de los sábados.</p></div><b>$42.000</b></div>
+    </div>
+  </section>
+  <section id="trabajos">
+    <span class="kicker">Trabajos recientes</span>
+    <div class="gallery" style="margin-top:22px">
+      <div class="ph"><img src="fotos/u-1599351431202-1e0f0137899a.webp" alt="Barbero con navaja"></div>
+      <div class="ph"><img src="fotos/u-1585747860715-2ba37e788b70.webp" alt="Sillas de barbería"></div>
+      <div class="ph"><img src="fotos/u-1517832606299-7ae9b720a186.webp" alt="Arreglo de barba"></div>
+      <div class="ph"><img src="fotos/u-1621605815971-fbc98d665033.webp" alt="Herramientas de barbería"></div>
+      <div class="ph"><img src="fotos/u-1647140655214-e4a2d914971f.webp" alt="Corte con tijera"></div>
+    </div>
+  </section>
+  <section class="book" id="reservar">
+    <div class="txt">
+      <span class="kicker">Reserva en línea</span>
+      <h2 class="display">Elige tu <span>hora.</span></h2>
+      <div class="slots" role="group" aria-label="Horas disponibles hoy"><button class="chip">10:00</button><button class="chip">11:30</button><button class="chip on">2:00</button><button class="chip">3:30</button><button class="chip">5:00</button><button class="chip">6:30</button></div>
+      <a class="pill solid" href="#">Confirmar por WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p style="margin-top:22px;color:#5d584f">Calle 49 · Centro de Rionegro · Lunes a sábado, 9:00 a. m. a 8:00 p. m.</p>
+    </div>
+    <div class="ph"><img src="fotos/u-1536520002442-39764a41e987.webp" alt="Interior de la barbería"></div>
+  </section>
+</main>
+<footer><div class="wrap"><span>Filo · Barbería</span><span>Plantilla de ejemplo · Diseño: JJBeta</span></div></footer>
+
+<a href="https://jjbeta-dev.github.io/plantillas/" style="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99;display:flex;gap:10px;align-items:center;background:oklch(20.74% 0.0865 291.29);color:#fff;font:600 14px/1 system-ui,sans-serif;padding:12px 18px;border-radius:99px;box-shadow:0 14px 34px rgb(0 0 0 / .3);text-decoration:none;white-space:nowrap"><span style="width:10px;height:10px;border-radius:50%;background:oklch(68.15% 0.1905 295.86)"></span>Plantilla de JJBeta · Quiero la mía</a>
+<script src="../_boceto.js"></script>
+</body>
+</html>

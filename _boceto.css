@@ -1,0 +1,12 @@
+/* Modo boceto compartido: abrir cualquier plantilla con ?sketch la dibuja a lápiz. */
+body.sketch { background: #f6f1e6 !important; color: transparent; }
+.sketch > *:not(svg):not(script) { filter: url(#rough); }
+.sketch * { color: transparent !important; text-shadow: none !important; box-shadow: none !important; background-color: transparent !important; background-image: none !important; }
+.sketch :is(.hero, .band, section, header, footer)::before, .sketch :is(.hero, .band, section, header, footer)::after { display: none !important; }
+.sketch .ln { background-image: linear-gradient(#4a4a4a, #4a4a4a) !important; background-size: 100% 2.5px !important; background-position: 0 72% !important; background-repeat: no-repeat !important; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.sketch :is(h1, h2, h3) .ln { background-image: repeating-linear-gradient(-55deg, #3a3a3a 0 2px, transparent 2px 9px) !important; background-size: 100% 70% !important; background-position: 0 60% !important; }
+.sketch img, .sketch svg:not([width="0"]) { visibility: hidden; }
+.sketch :is(.pill, .chip, .ph, .card, .box, .tag, .stamp, .field) { border: 3px solid #3a3a3a !important; }
+.sketch .ph { background-image: linear-gradient(to top right, transparent calc(50% - 1.5px), #8a8a8a calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)), linear-gradient(to top left, transparent calc(50% - 1.5px), #8a8a8a calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)) !important; }
+.sketch :is(.line, hr, .row, footer .wrap) { border-color: #3a3a3a !important; }
+.sketch .ph::before, .sketch .ph::after { display: none !important; }
