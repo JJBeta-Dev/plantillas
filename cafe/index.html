@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Tierra Alta · Plantilla de ejemplo de JJBeta">
+<title>Tierra Alta · Café de origen del Oriente antioqueño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --green: #1f3a2e; --green-2: #2c5241; --cream: #f3ece0; --paper: #fbf7f0; --caramel: #c98b4e; --ink: #17211b; --soft: #5d685f; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; }
+body { background: var(--cream); color: var(--ink); font: 400 17px/1.6 'Sora', sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { border: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+.wrap { width: min(1240px, 100% - 64px); margin: 0 auto; }
+h1, h2 { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -.02em; line-height: .95; }
+h1 i, h2 i { color: var(--caramel); }
+.pill { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 99px; font-weight: 600; font-size: 15px; }
+.pill.solid { background: var(--caramel); color: #fff; }
+.pill.ghost { border: 1.5px solid rgb(255 255 255 / .6); color: #fff; }
+.pill svg { width: 18px; height: 18px; }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; color: #fff; position: absolute; inset: 0 0 auto; z-index: 3; width: min(1240px, 100% - 64px); margin: 0 auto; }
+.logo { font-family: 'Instrument Serif', serif; font-size: 30px; letter-spacing: -.01em; }
+nav ul { display: flex; gap: 32px; list-style: none; font-size: 15px; font-weight: 600; }
+.nav-cta { padding: 11px 20px; font-size: 14px; }
+
+.hero { position: relative; min-height: 760px; margin: 14px; border-radius: 36px; overflow: hidden; color: #fff; display: flex; align-items: flex-end; }
+.hero .ph { position: absolute; inset: 0; }
+.hero .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(23 33 27 / .88) 0%, rgb(23 33 27 / .55) 45%, transparent 75%); }
+.hero-in { position: relative; z-index: 2; padding: 0 0 80px 72px; max-width: 720px; }
+.eyebrow { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: #e9c89f; }
+.hero h1 { font-size: 118px; margin: 18px 0 20px; }
+.hero p { font-size: 19px; color: rgb(255 255 255 / .82); max-width: 500px; }
+.actions { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+.stamp { position: absolute; right: 70px; bottom: 70px; z-index: 2; width: 170px; height: 170px; border-radius: 50%; background: var(--paper); color: var(--green); display: grid; place-items: center; text-align: center; font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.05; rotate: -10deg; box-shadow: 0 20px 40px rgb(0 0 0 / .3); }
+.stamp b { display: block; font-size: 52px; color: var(--caramel); font-weight: 400; }
+
+.menu { padding: 120px 0 90px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+.menu h2 { font-size: 84px; }
+.menu > div > p { color: var(--soft); margin-top: 18px; max-width: 420px; }
+.menu .ph { margin-top: 40px; height: 420px; border-radius: 28px; overflow: hidden; }
+.menu .ph img { width: 100%; height: 100%; object-fit: cover; }
+.tabs { display: flex; gap: 8px; background: var(--paper); padding: 6px; border-radius: 99px; width: max-content; }
+.chip { padding: 10px 20px; border-radius: 99px; font-weight: 600; font-size: 14px; }
+.chip.on { background: var(--green); color: #fff; }
+.list { margin-top: 26px; display: grid; }
+.item { display: grid; grid-template-columns: 92px 1fr auto; gap: 22px; align-items: center; padding: 20px 0; border-bottom: 1px solid #ddd2c0; }
+.item .ph { margin: 0; width: 92px; height: 92px; border-radius: 50%; }
+.item h3 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 30px; line-height: 1.1; }
+.item p { color: var(--soft); font-size: 14px; }
+.item b { font-size: 18px; }
+
+.origin { background: var(--green); color: #fff; padding: 110px 0; border-radius: 48px; margin: 0 14px; }
+.origin .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.origin .ph { height: 560px; border-radius: 300px 300px 28px 28px; overflow: hidden; }
+.origin .ph img { width: 100%; height: 100%; object-fit: cover; }
+.origin h2 { font-size: 78px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.fact { background: var(--green-2); border-radius: 22px; padding: 22px; }
+.fact b { font-family: 'Instrument Serif', serif; font-size: 46px; font-weight: 400; color: #e9c89f; display: block; line-height: 1; }
+.fact span { font-size: 14px; color: rgb(255 255 255 / .75); }
+
+.visit { padding: 110px 0 90px; }
+.visit .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+.visit .ph { border-radius: 30px; overflow: hidden; height: 520px; position: relative; }
+.visit .ph img { position: absolute; inset: 0; }
+.visit .ph img { width: 100%; height: 100%; object-fit: cover; }
+.card { background: var(--paper); border-radius: 30px; padding: 44px; display: flex; flex-direction: column; gap: 18px; }
+.card h2 { font-size: 64px; }
+.card li { list-style: none; color: var(--soft); }
+.card li b { color: var(--ink); }
+.card .pill.solid { align-self: start; margin-top: 8px; }
+
+footer { padding: 40px 0 60px; color: var(--soft); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; border-top: 1px solid #ddd2c0; padding-top: 26px; }
+
+@media (max-width: 700px) {
+  .wrap, nav { width: calc(100% - 36px); }
+  nav ul { display: none; }
+  .hero { min-height: 760px; margin: 8px; border-radius: 26px; }
+  .hero::after { background: linear-gradient(0deg, rgb(23 33 27 / .92) 0%, rgb(23 33 27 / .5) 55%, rgb(23 33 27 / .2) 100%); }
+  .hero-in { padding: 0 22px 40px; }
+  .hero h1 { font-size: 64px; }
+  .hero p { font-size: 16px; }
+  .stamp { width: 110px; height: 110px; font-size: 15px; right: 18px; bottom: auto; top: 96px; }
+  .stamp b { font-size: 32px; }
+  .menu, .origin .wrap, .visit .grid { grid-template-columns: 1fr; gap: 34px; }
+  .menu { padding: 80px 0 60px; }
+  .menu h2, .origin h2 { font-size: 54px; }
+  .menu .ph { height: 260px; }
+  .item { grid-template-columns: 70px 1fr auto; gap: 14px; }
+  .item .ph { width: 70px; height: 70px; }
+  .item h3 { font-size: 24px; }
+  .origin { padding: 70px 0; margin: 0 8px; border-radius: 32px; }
+  .origin .ph { height: 380px; }
+  .facts { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .fact { padding: 14px; }
+  .fact b { font-size: 32px; }
+  .card { padding: 30px 24px; }
+  .card h2 { font-size: 46px; }
+  .visit .ph { height: 300px; }
+  footer .wrap { flex-direction: column; gap: 8px; }
+}
+
+/* modo boceto */
+body.sketch { background: #f6f1e6; color: transparent; }
+.sketch > *:not(svg):not(script) { filter: url(#rough); }
+.sketch * { color: transparent !important; text-shadow: none !important; box-shadow: none !important; background-color: transparent !important; background-image: none !important; }
+.sketch .hero::after { display: none; }
+.sketch .ln { background-image: linear-gradient(#4a4a4a, #4a4a4a) !important; background-size: 100% 2.5px !important; background-position: 0 72% !important; background-repeat: no-repeat !important; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.sketch :is(h1, h2, h3) .ln { background-image: repeating-linear-gradient(-55deg, #3a3a3a 0 2px, transparent 2px 9px) !important; background-size: 100% 70% !important; background-position: 0 60% !important; }
+.sketch img { visibility: hidden; }
+.sketch :is(.pill, .chip, .tabs, .ph, .card, .fact, .stamp, .hero, .origin) { border: 3px solid #3a3a3a !important; }
+.sketch .ph { background-image: linear-gradient(to top right, transparent calc(50% - 1.5px), #8a8a8a calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)), linear-gradient(to top left, transparent calc(50% - 1.5px), #8a8a8a calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)) !important; }
+.sketch .hero > .ph { border: 0 !important; }
+.sketch :is(.item, footer .wrap) { border-color: #3a3a3a !important; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></svg>
+
+<header class="hero">
+  <nav aria-label="Principal"><a class="logo" href="#">Tierra Alta</a><ul><li><a href="#menu">Menú</a></li><li><a href="#origen">Origen</a></li><li><a href="#visita">Visítanos</a></li></ul><a class="pill solid nav-cta" href="#">Pedir para llevar</a></nav>
+  <div class="ph"><img src="fotos/c-1515860734122-e0d771b36d3e.webp" alt="Barista sirviendo un capuchino con arte latte"></div>
+  <div class="hero-in">
+    <span class="eyebrow">Café de origen · Oriente antioqueño</span>
+    <h1>Del cafetal <i>a tu taza,</i> sin escalas.</h1>
+    <p>Tostamos cada semana granos de fincas vecinas y los preparamos como se merecen. Ven a probarlos o pídelos a domicilio.</p>
+    <div class="actions"><a class="pill solid" href="#menu">Ver el menú <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill ghost" href="#visita">Cómo llegar</a></div>
+  </div>
+  <div class="stamp"><span><b>2.150</b>metros sobre el mar</span></div>
+</header>
+
+<main>
+<section class="menu wrap" id="menu">
+  <div>
+    <h2>Un menú corto, <i>hecho con calma.</i></h2>
+    <p>Pocas bebidas, bien hechas. Todas con café de la región y leche de finca o vegetal.</p>
+    <div class="ph"><img src="fotos/c-1442512595331-e89e73853f31.webp" alt="Barra de métodos de filtrado"></div>
+  </div>
+  <div>
+    <div class="tabs" role="group" aria-label="Categorías"><button class="chip on">Calientes</button><button class="chip">Fríos</button><button class="chip">Para llevar</button></div>
+    <div class="list">
+      <div class="item"><div class="ph"><img src="fotos/c-1676277571294-f0bcdb8dc7c8.webp" alt="" style="width:100%;height:100%;object-fit:cover"></div><div><h3>Capuchino de la casa</h3><p>Espresso doble y leche texturizada.</p></div><b>$9.000</b></div>
+      <div class="item"><div class="ph"><img src="fotos/c-1614507730489-2c5f0d17f1cb.webp" alt="" style="width:100%;height:100%;object-fit:cover"></div><div><h3>Latte de panela</h3><p>Dulce suave, sin azúcar refinada.</p></div><b>$10.500</b></div>
+      <div class="item"><div class="ph"><img src="fotos/c-1752362631575-37fbf24ee00e.webp" alt="" style="width:100%;height:100%;object-fit:cover"></div><div><h3>Filtrado del día</h3><p>V60 o Chemex, pregunta por el origen.</p></div><b>$8.000</b></div>
+      <div class="item"><div class="ph"><img src="fotos/c-1599163479506-2758dab1dd5e.webp" alt="" style="width:100%;height:100%;object-fit:cover"></div><div><h3>Café para llevar a casa</h3><p>Bolsa de 250 g, molido a tu gusto.</p></div><b>$32.000</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="origin" id="origen">
+  <div class="wrap">
+    <div class="ph"><img src="fotos/c-1579265898841-79c7890d69cf.webp" alt="Barista preparando café"></div>
+    <div>
+      <span class="eyebrow">Nuestro origen</span>
+      <h2>Fincas que <i>conocemos por su nombre.</i></h2>
+      <p style="color:rgb(255 255 255 / .78);margin-top:18px;max-width:460px">Compramos directo a familias caficultoras del Oriente antioqueño y les pagamos más que el precio de bolsa.</p>
+      <div class="facts"><div class="fact"><b>6</b><span>fincas aliadas</span></div><div class="fact"><b>84</b><span>puntos de taza</span></div><div class="fact"><b>7</b><span>días desde el tueste</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit wrap" id="visita">
+  <div class="grid">
+    <div class="ph"><img src="fotos/c-1567880905822-56f8e06fe630.webp" alt="Interior luminoso de la cafetería"></div>
+    <div class="card">
+      <h2>Te guardamos <i>una mesa.</i></h2>
+      <ul><li><b>Horario:</b> lunes a sábado, 7:00 a. m. a 7:00 p. m.</li><li><b>Domingos:</b> 8:00 a. m. a 2:00 p. m.</li><li><b>Wifi y enchufes</b> para trabajar con calma.</li></ul>
+      <a class="pill solid" href="#">Reservar por WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>Tierra Alta · Café de origen</span><span>Plantilla de ejemplo · Diseño: JJBeta</span></div></footer>
+<script>
+const mode = location.search.includes('sketch') ? 'sketch' : ''
+if (mode) {
+  document.body.classList.add(mode)
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: (n) => n.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT })
+  const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode)
+  nodes.forEach((n) => { if (n.parentElement.closest('svg, style, script')) return; const s = document.createElement('span'); s.className = 'ln'; n.replaceWith(s); s.append(n) })
+}
+</script>
+</body>
+</html>
